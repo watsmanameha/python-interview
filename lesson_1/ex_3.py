@@ -3,7 +3,16 @@
 # Заполнить этими данными словарь. Ключи словаря должны создаваться по шаблону: “elem_<номер_элемента>”,
 # а значене сгенеренное случайное число.  Вывести содержимое словаря.
 # (Усложненный вариант по желанию*): Не использовать стандартный модуль python random.
+import random
 
-def get_random_number(min, max):
-    d = dict.fromkeys()
 
+def get_random_number(min_range, max_range):
+    d = {}
+    arr = [random.randint(min_range, max_range) for i in range(10)]
+
+    for i in arr:
+        d.update({'elem_{}'.format(arr.index(i) + 1): i})
+    return d
+
+
+print(get_random_number(1, 10))
