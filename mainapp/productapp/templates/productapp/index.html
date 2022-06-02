@@ -1,0 +1,13 @@
+{% extends 'productapp/base.html' %}
+{% block content %}
+<table class="table">
+    <tr>
+        <th>Название</th>
+    </tr>
+    {% for product in product_list %}
+    <tr>
+        <td>{{ product.name }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
